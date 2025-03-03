@@ -36,7 +36,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: dimawebnet/docker-ci-automation
-          flavor: |
+          flavor: | 
             latest=false
           tags: |
             type=raw,value=05
