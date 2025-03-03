@@ -21,7 +21,7 @@ jobs:
       - name: Build and push image
         run: |
           docker buildx build --no-cache --pull --push \
-            --tag your-image:latest .
+            --tag dimawebnet/docker-ci-automation:latest .
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
