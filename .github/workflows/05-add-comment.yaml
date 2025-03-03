@@ -4,7 +4,7 @@ name: 05 Build and Comment
 on:
   push:
     branches:
-      - main
+      - test-branch
   pull_request:
 
 jobs:
