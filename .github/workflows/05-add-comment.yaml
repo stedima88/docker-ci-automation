@@ -18,6 +18,10 @@ jobs:
 #NEW: (END) ############################################################
 
     steps:
+      - name: Build and push image
+        run: |
+          docker buildx build --no-cache --pull --push \
+            --tag your-image:latest .
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
