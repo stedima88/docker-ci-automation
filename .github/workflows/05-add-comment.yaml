@@ -34,15 +34,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Docker build
-        uses: docker/build-push-action@v6
+      - name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v5
         with:
-          push: false
-          no-cache: true
-          context: docker://stedima88/docker-ci-automation:latest  # Force Docker Hub source
-          labels: ${{ steps.docker_meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64    
-          flavor: | 
+          images: dimawebnet/docker-ci-automation
+          flavor: |
             latest=false
           tags: |
             type=raw,value=05
